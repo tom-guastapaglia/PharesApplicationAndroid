@@ -71,12 +71,18 @@ public class PlaceholderContent {
         public final String content;
         public final String details;
         public final String region;
+        public final double lat;
+        public final double lon;
+        public final int    portee;
 
-        public PlaceholderItem(String id, String content, String details,String region) {
+        public PlaceholderItem(String id, String content, String details,String region, Double lat, Double lon, int portee) {
             this.id = id;
             this.content = content;
             this.details = details;
             this.region = region;
+            this.lat = lat;
+            this.lon = lon;
+            this.portee = portee;
         }
 
         @Override
@@ -109,7 +115,10 @@ public class PlaceholderContent {
                 JSONObject obj = (JSONObject) jsonA.get(i);
                 String nom = obj.getString("name");
                 String region = obj.getString("region");
-                addItem(new PlaceholderItem(String.valueOf(i),nom,makeDetails(i),region));
+                Double lat = obj.getDouble("lat");
+                Double lon = obj.getDouble("lon");
+                int     portee  =   obj.getInt("portee");
+                addItem(new PlaceholderItem(String.valueOf(i),nom,makeDetails(i),region, lat, lon, portee));
             }
             Log.d("PlaceHolderContent",str);
         } catch (IOException | JSONException e) {
