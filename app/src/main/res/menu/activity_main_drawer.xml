@@ -6,27 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@android:drawable/ic_menu_myplaces"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
             android:id="@+id/nav_apropos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_dialog_info"
             android:title="@string/menu_apropos" />
         <item
             android:id="@+id/nav_item"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Items Phares" />
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="Liste des phares" />
         <item
             android:id="@+id/nav_map"
             android:icon="@android:drawable/ic_menu_mapmode"
-            android:title="Map" />
+            android:title="Carte des phares" />
     </group>
 </menu>

@@ -1,8 +1,12 @@
 package promo.formation.menuapplication;
 
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         context = getApplicationContext();
 
+
         PlaceholderContent.loadJson();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_apropos, R.id.nav_item, R.id.nav_map)
+                R.id.nav_home, R.id.nav_apropos, R.id.nav_item, R.id.nav_map)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -52,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         findViewById(R.id.nav_home);
+
+        setContentView(R.layout.fragment_home);
+        VideoView videoView = findViewById(R.id.videoView);
+        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.lighthouse);
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
 
     }
 
@@ -68,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 
 
     public static Context getContext(){
