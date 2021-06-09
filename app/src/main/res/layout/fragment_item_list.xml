@@ -6,8 +6,10 @@
     android:name="promo.formation.menuapplication.ItemPhareFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:background="@drawable/alexandre_viard_32yi_bnrex4_unsplash"
     app:layoutManager="LinearLayoutManager"
     tools:context=".ItemPhareFragment"
-    tools:listitem="@layout/fragment_item" />
+    tools:listitem="@layout/fragment_item"
+    />
