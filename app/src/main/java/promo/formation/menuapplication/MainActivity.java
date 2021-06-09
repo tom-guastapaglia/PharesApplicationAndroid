@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         context = getApplicationContext();
 
 
@@ -56,14 +57,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        findViewById(R.id.nav_home);
 
-        setContentView(R.layout.fragment_home);
-        VideoView videoView = findViewById(R.id.videoView);
-        videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.lighthouse);
-        MediaController mediaController = new MediaController(this);
-        mediaController.setAnchorView(videoView);
-        videoView.setMediaController(mediaController);
+
+
+
 
     }
 
